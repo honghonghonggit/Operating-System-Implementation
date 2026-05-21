@@ -12,20 +12,20 @@ Linux 환경에서 프로세스 스케줄링의 메커니즘을 분석하고 핵
 
 ### 1. Priority-Based Scheduling
 시스템의 우선순위와 응답성을 결정하는 기본 로직입니다.
-- **주요 파일**: `Priority-Based/sched.cc` (직접 구현)
+- **주요 파일**: `CPU-Scheduler/Priority-Based/sched.cc` (직접 구현)
 - **지원 알고리즘**: FCFS, SPN, RR, MLFQ
 
 ### 2. Proportional-Share Scheduling
 자원의 공정한 배분을 위한 정밀 스케줄링 기법입니다.
-- **주요 파일**: `Proportional-Share/sched.cc` 내 관련 소스 (직접 구현)
+- **주요 파일**: `CPU-Scheduler/Proportional-Share/sched.cc` 내 관련 소스 (직접 구현)
 - **지원 알고리즘**: Lottery, Stride Scheduling
 
 ---
 
 ##  Directory Structure
 
-- **Priority-Based/**: FCFS, SPN, RR, MLFQ 로직이 포함된 `sched.cc` 수록
-- **Proportional-Share/**: Lottery, Stride 로직이 포함된 `sched.cc` 수록
+- **CPU-Scheduler/Priority-Based/**: FCFS, SPN, RR, MLFQ 로직이 포함된 `sched.cc` 수록
+- **CPU-Scheduler/Proportional-Share/**: Lottery, Stride 로직이 포함된 `sched.cc` 수록
 - **Makefile**: 빌드 및 컴파일 자동화
 
 ##  Usage 
@@ -45,4 +45,57 @@ make
 # 알고리즘 테스트 실행
 ./test
 
+---
 
+
+
+# 🚀 Lock & Synchronization Mechanism
+
+멀티스레드 환경에서 데이터 무결성을 보장하기 위해 락(Lock) 메커니즘을 구현하고 성능을 비교 분석한 프로젝트입니다.
+
+> Core Implementation
+> - 본 프로젝트는 공유 자원에 대한 동시성 제어(Concurrency Control)를 위한 다양한 락 기법을 개발했습니다.
+> - 주요 작업물: `Synchronization/hashtable_impl.cpp` 파일 내 모든 동기화 알고리즘 로직 구현
+
+---
+
+## 🛠️ Implementation Details
+
+### 1. HashTable (Without Lock)
+동기화 기법을 적용하지 않은 베이스라인(Baseline) 구현체입니다.
+- **주요 파일**: `Synchronization/hashtable_impl.cpp` (직접 구현)
+- **지원 알고리즘**: HashTable (Without Lock)
+
+### 2. Coarse-grained Lock (CoarseHashTable)
+해시 테이블 전체에 하나의 락(Lock)을 적용하여 동기화하는 기법입니다.
+- **주요 파일**: `Synchronization/hashtable_impl.cpp` 내 관련 소스 (직접 구현)
+- **지원 알고리즘**: CoarseHashTable (Coarse-grained Lock)
+
+### 3. Fine-grained Lock (FineHashTable)
+해시 테이블의 각 버킷 또는 세그먼트 단위로 락을 세분화한 기법입니다.
+- **주요 파일**: `Synchronization/hashtable_impl.cpp` 내 관련 소스 (직접 구현)
+- **지원 알고리즘**: FineHashTable (Fine-grained Lock)
+
+---
+
+## 📂 Directory Structure
+
+- **Synchronization**: `hashtable_impl.cpp` 내 동기화 로직 수록
+- **Makefile**: 빌드 및 컴파일 자동화
+
+##  Usage 
+### 1. 환경 설정 (최초 1회)
+Google Test 등 빌드에 필요한 의존성 라이브러리를 설치합니다.
+```bash
+chmod +x install_package.sh
+./install_package.sh
+
+2. 빌드 및 테스트
+각 스케줄러 폴더로 이동하여 아래 명령어를 실행합니다.
+
+# 기존 빌드 기록 삭제 후 재빌드
+make clean
+make
+
+# 알고리즘 테스트 실행
+./test
