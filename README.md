@@ -4,7 +4,7 @@ Linux 환경에서 프로세스 스케줄링의 메커니즘을 분석하고 핵
 
 > Core Implementation
 > - 본 프로젝트는 제공된 시뮬레이터 프레임워크를 기반으로 핵심 스케줄링 로직을 개발했습니다.
-> - 주요 작업물: `Priority-Based/sched.cc`, `Proportional-Share/sched.cc` 파일 내 모든 스케줄링 알고리즘 로직 구현
+> - 주요 작업물: `CPU-Scheduler/Priority-Based/sched.cc`, `CPU-Scheduler/Proportional-Share/sched.cc` 파일 내 모든 스케줄링 알고리즘 로직 구현
 
 ---
 
