@@ -50,7 +50,8 @@ make
 ./test
 ```
 
-
+<br> 
+<br>
 
 # 🚀 Lock & Synchronization Mechanism
 
