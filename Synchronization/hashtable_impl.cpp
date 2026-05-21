@@ -1,11 +1,3 @@
-/*
-*  DKU Operating System Lab (2026)
-*      Lab2 (Concurrency Data Structure: Hash Table)
-*      Student id : 32225001
-*      Student name : 홍성제
-*      Date: 2026.05.05.
-*/
-
 
 #include "hashtable_impl.h"
 #include <cstdlib>
