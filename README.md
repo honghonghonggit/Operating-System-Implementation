@@ -86,19 +86,24 @@ make
 - **Synchronization**: `hashtable_impl.cpp` 내 동기화 로직 수록
 - **Makefile**: 빌드 및 컴파일 자동화
 
-##  Usage 
+## Usage 
+
 ### 1. 환경 설정 (최초 1회)
 Google Test 등 빌드에 필요한 의존성 라이브러리를 설치합니다.
+
 ```bash
 chmod +x install_package.sh
 ./install_package.sh
+```
 
-2. 빌드 및 테스트
+### 2. 빌드 및 테스트
 각 스케줄러 폴더로 이동하여 아래 명령어를 실행합니다.
 
+```bash
 # 기존 빌드 기록 삭제 후 재빌드
 make clean
 make
 
 # 알고리즘 테스트 실행
 ./test
+```
