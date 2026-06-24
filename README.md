@@ -1,4 +1,4 @@
-# 🚀 Linux CPU Scheduler Simulator
+# Linux CPU Scheduler Simulator
 
 Linux 환경에서 프로세스 스케줄링의 메커니즘을 분석하고 핵심 알고리즘을 직접 구현한 프로젝트입니다.
 
@@ -8,7 +8,7 @@ Linux 환경에서 프로세스 스케줄링의 메커니즘을 분석하고 핵
 
 ---
 
-## 🛠️ Implementation Details
+## Implementation Details
 
 ### 1. Priority-Based Scheduling
 시스템의 우선순위와 응답성을 결정하는 기본 로직입니다.
@@ -53,7 +53,7 @@ make
 <br> 
 <br>
 
-# 🚀 Lock & Synchronization Mechanism
+# Lock & Synchronization Mechanism
 
 멀티스레드 환경에서 데이터 무결성을 보장하기 위해 락(Lock) 메커니즘을 구현하고 성능을 비교 분석한 프로젝트입니다.
 
@@ -63,7 +63,7 @@ make
 
 ---
 
-## 🛠️ Implementation Details
+## Implementation Details
 
 ### 1. HashTable (Without Lock)
 동기화 기법을 적용하지 않은 베이스라인(Baseline) 구현체입니다.
@@ -82,7 +82,7 @@ make
 
 ---
 
-## 📂 Directory Structure
+## Directory Structure
 
 - **Synchronization**: `hashtable_impl.cpp` 내 동기화 로직 수록
 - **Makefile**: 빌드 및 컴파일 자동화
